@@ -16,7 +16,6 @@
         #contianer {
             margin: 0 auto;
             width: 1200px;
-            background-color: blue;
 
         }
 /* -------------------------------------------------------------------------- */
@@ -65,8 +64,60 @@
             float: left;
             width: 600px;
             height: 100%;
-            background-color: blueviolet;
+            margin-top: 10px;
+        }
 
+        #tabMenu input{
+            display: none;
+        }
+
+        #tabMenu label{
+            display: inline-block;
+            margin: 0 0 ;
+            padding: 15px 25px;
+            font-weight: 600;
+            text-align: center;
+            color: #aaa;
+            border: 1px solid transparent;
+        }
+
+        #tebMenu label :hover{
+            color: #222;
+            cursor: pointer;
+        }
+
+        #tabMenu input:checked + label{
+            color: #b00;
+            border: 1px solid #ddd;
+            background-color: #eee;
+        }
+        
+        .tabContent {
+            display: none;
+            padding: 20px 0 0 ;
+            border-top: 1px solid #ddd;
+        }
+
+        .tabContent h2{
+            display: none;
+        }
+
+        #notice ul{
+            list-style: disc;
+            margin-left: 30px;
+        }
+
+        #notice ul li{
+            font-size: 16px;
+            line-height: 2.5;
+        }
+
+        #gallery ul li {
+            display: inline;
+        }
+
+        #tab1:checked ~ #notice, #tab2:checked ~ #gallery{
+            display: block;
         }
 /* -------------------------------------------------------------------------- */
 
@@ -100,7 +151,35 @@
         <div id="slide"></div>
         <div id="contents">
             <div id="tabMenu">
+                <input type="radio" name="tabs" id="tab1" checked>
+                <label for="tab1">공지사항</label>
+                <input type="radio" name="tabs" id="tab2">
+                <label for="tab2">갤러리</label>
+
+                <div id="notice" class="tabContent">
+                    <h2>공지사항 내용입니다.</h2>
+                    <ul>
+                        <li>사무실을 이전했습니다.</li>
+                        <li>[참가 모집] 카약 체험에 초대합니다.</li>
+                        <li>[참가 모집] 여름 방학 기간, 오름 체험단을 모집합니다.</li>
+                        <li>겨울, 추천 여행지</li>
+                        <li>가을, 추천 여행지</li>
+                    </ul>
+                </div>
+                <div id="gallery" class="tabContent">
+                    <h2>갤러리 내용입니다.</h2>
+                    <ul>
+                        <li><img src="images/img-1.jpg" ></li>
+                        <li><img src="images/img-2.jpg" ></li>
+                        <li><img src="images/img-3.jpg" ></li>
+                        <li><img src="images/img-1.jpg" ></li>
+                        <li><img src="images/img-2.jpg" ></li>
+                        <li><img src="images/img-3.jpg" ></li>
+                    </ul>
+
+                </div>
             </div>
+
 
 
             <div id="quickLink"></div>
